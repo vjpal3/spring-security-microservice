@@ -8,4 +8,6 @@ import com.vrishalipal.microservices.securityjwtservice.model.AppUser;
 @Repository
 public interface AppUserRepository extends CrudRepository<AppUser, Long> {
 	
+	AppUser findByUsername(String username);
+	AppUser getById(Long id);
 }
