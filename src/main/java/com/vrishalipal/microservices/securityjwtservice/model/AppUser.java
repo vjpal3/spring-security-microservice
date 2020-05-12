@@ -17,6 +17,8 @@ import javax.validation.constraints.NotBlank;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class AppUser implements UserDetails {
 	
@@ -27,12 +29,8 @@ public class AppUser implements UserDetails {
 	@NotBlank(message = "Please enter your full name")
 	private String fullname;
 	
-	@Email(message = "Email needs to be a valid email-id")
+	@Email(message = "Username needs to be a valid email-id")
 	@NotBlank(message = "Email is required")
-	@Column(unique = true)
-	private String email;
-	
-	@NotBlank(message = "Please enter your username")
 	@Column(unique = true)
 	private String username;
 	
@@ -63,14 +61,6 @@ public class AppUser implements UserDetails {
 
 	public void setFullname(String fullname) {
 		this.fullname = fullname;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
 	}
 
 	public String getUsername() {
@@ -126,28 +116,32 @@ public class AppUser implements UserDetails {
 	/*  UserDetails interface methods */
 
 	@Override
+	@JsonIgnore
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		return null;
 	}
 
 	@Override
+	@JsonIgnore
 	public boolean isAccountNonExpired() {
 		return true;
 	}
 
 	@Override
+	@JsonIgnore
 	public boolean isAccountNonLocked() {
 		return true;
 	}
 
 	@Override
+	@JsonIgnore
 	public boolean isCredentialsNonExpired() {
 		return true;
 	}
 
 	@Override
+	@JsonIgnore
 	public boolean isEnabled() {
 		return true;
 	}
-
 }
