@@ -32,7 +32,6 @@ public class AppUserService {
 			catch (Exception e) {
 			throw new UsernameAlreadyExistsException("Username '" + newUser.getUsername() + "' already exists!");
 		}	
-		
 	}
 	
 
