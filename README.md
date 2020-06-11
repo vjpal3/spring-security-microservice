@@ -1,4 +1,4 @@
-### [Auth Microservice](https://github.com/vjpal3/spring-security-microservice)
+### Auth Microservice
   - A Spring Boot microservice with REST API that leverages Spring Security using JWT web tokens
   - REST API endpoints for user registration and login
   - User data persisted using PostgreSQL
