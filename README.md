@@ -13,4 +13,5 @@
   - Spring Security with JSON Web Token
   - Spring Data JPA-Hibernate
   - PostgreSQL
+  - Maven
   - REST API
